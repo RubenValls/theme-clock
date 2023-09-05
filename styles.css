@@ -1,3 +1,22 @@
-
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+body .mode-container {
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+body .mode-container button {
+  margin-top: 75px;
+  height: 40px;
+  width: 40px;
+  background-color: transparent;
+  border-radius: 10px;
+}
+body .mode-container button:hover {
+  cursor: pointer;
+}
 
 /*# sourceMappingURL=styles.css.map */
