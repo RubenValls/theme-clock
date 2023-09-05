@@ -19,4 +19,14 @@ body .mode-container button:hover {
   cursor: pointer;
 }
 
+.dark {
+  background-color: #292929;
+  color: white;
+}
+
+.light {
+  background-color: white;
+  color: #292929;
+}
+
 /*# sourceMappingURL=styles.css.map */
