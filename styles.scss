@@ -26,16 +26,53 @@ body{
 
     .clock{
         display: flex;
+        position: relative;
         justify-content: center;
         align-items: center;
-        margin: auto;
+        margin: 50px auto auto auto;
         width: 100vw;
         max-width: 800px;
-        height: 400px;
+        height: 250px;
+
+        #center{
+            z-index: 2;
+            position: absolute;
+            height: 5px;
+            width: 5px;
+            border-radius: 100%;
+            border: 3px solid red;
+            background-color: black
+        }
+
+        #seconds{
+            z-index: 1;
+            position: absolute;
+            height: 50%;
+            top: 0;
+            width: 3px;
+            background-color: red;
+        }
+
+        #minutes{
+            position: absolute;
+            height: 50%;
+            top: 0;
+            width: 3px;
+            background-color: black;
+        }
+
+        #hours{
+            position: absolute;
+            height: 25%;
+            top: 25%;
+            width: 3px;
+            background-color: black;
+        }
     }
 
     .time-container{
         @extend .clock;
+        margin-top: 0;
         flex-direction: column;
         height: 300px;
 
