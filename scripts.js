@@ -7,7 +7,13 @@ let hour = date.getHours();
 
 
 const colorMode = document.querySelector('#toggle-mode');
-console.log(date, day, month, minute, hour)
+const hoursContainer = document.querySelector('#hour');
+const dateContainer = document.querySelector('#date');
+
+const updateDateHour = () => {
+    hoursContainer.textContent = `${hour}:${minute}`
+    dateContainer.textContent = `${day}, ${month}`
+}
 
 colorMode.addEventListener('click', () => {
     isDarkMode = !isDarkMode
@@ -19,3 +25,5 @@ colorMode.addEventListener('click', () => {
         colorMode.innerHTML = '<i class="fa-solid fa-moon fa-2xl" style="color: #000000;"></i>';
     }
 })
+
+updateDateHour();
