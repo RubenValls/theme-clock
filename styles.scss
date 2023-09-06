@@ -93,7 +93,23 @@ body{
         h3{
             margin: 0;
             font-weight: lighter;
+            display: flex;
+            
+            #day-number{
+                display: flex;
+                margin: auto auto auto 5px;
+                justify-content: center;
+                align-items: center;
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                font-weight: bold;
+                font-size: 0.9rem;
+                background-color: black;
+                color: white;
+            }
         }
+
     }
 }
 

@@ -1,5 +1,4 @@
 const generalDate = new Date();
-let isDarkMode = false;
 
 const colorMode = document.querySelector('#toggle-mode');
 const hoursContainer = document.querySelector('#hour');
@@ -14,10 +13,14 @@ const getDayName = () => {
     return generalDate.toLocaleDateString([], {weekday: 'long'});
 }
 
+const setTodayInfo = () => {
+    const day = getDayName().charAt(0).toUpperCase() + getDayName().slice(1);
+    const month = generalDate.getMonth() + 1;
+    dateContainer.innerHTML = `${day}, ${getMonthName(month)} <div id="day-number"}>${generalDate.getDate()}</div>`
+}
+
 const updateDateHour = () => {
-    const date = new Date()
-    const day = getDayName().charAt(0).toUpperCase() + getDayName().slice(1)
-    const month = date.getMonth() + 1;
+    const date = new Date();
     let minute = date.getMinutes();
     let hour = date.getHours();
     let second = date.getSeconds();
@@ -27,7 +30,6 @@ const updateDateHour = () => {
     const hoursHand = document.querySelector('#hours');
 
     hoursContainer.textContent = `${hour}:${minute}`
-    dateContainer.textContent = `${day}, ${getMonthName(month)}`
     secondsHand.style.transform = `rotate(${second * 6}deg)`;
     minutesHand.style.transform = `rotate(${minute * 6}deg)`;
     hoursHand.style.transform = `rotate(${hour * 30}deg)`;
@@ -37,21 +39,27 @@ colorMode.addEventListener('click', () => {
     const minutesHand = document.querySelector('#minutes');
     const hoursHand = document.querySelector('#hours');
     const centerHand = document.querySelector('#center');
-    isDarkMode = !isDarkMode
+    const dateNumberContainer = document.querySelector('#day-number');
+
     if(document.body.classList.contains('light')){
         document.body.classList = 'dark';
         colorMode.innerHTML = '<i class="fa-regular fa-sun fa-xl" style="color: #000000;"></i>';
         minutesHand.style.backgroundColor = 'white';
         hoursHand.style.backgroundColor = 'white';
         centerHand.style.backgroundColor = 'white';
+        dateNumberContainer.style.backgroundColor = 'white';
+        dateNumberContainer.style.color = 'black';
     }else{
         document.body.classList = 'light';
         colorMode.innerHTML = '<i class="fa-solid fa-moon fa-2xl" style="color: #000000;"></i>';
         minutesHand.style.backgroundColor = 'black';
         hoursHand.style.backgroundColor = 'black';
         centerHand.style.backgroundColor = 'black';
+        dateNumberContainer.style.backgroundColor = 'black';
+        dateNumberContainer.style.color = 'white';
     }
 })
 
 updateDateHour();
-const timeInterval = setInterval(updateDateHour, 1000)
+setTodayInfo();
+const timeInterval = setInterval(updateDateHour, 1000);
