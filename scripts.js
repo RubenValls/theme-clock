@@ -1,6 +1,13 @@
 let isDarkMode = false;
+const date = new Date()
+const day = date.getDate();
+const month = date.getMonth() + 1;
+let minute = date.getMinutes();
+let hour = date.getHours();
+
 
 const colorMode = document.querySelector('#toggle-mode');
+console.log(date, day, month, minute, hour)
 
 colorMode.addEventListener('click', () => {
     isDarkMode = !isDarkMode
