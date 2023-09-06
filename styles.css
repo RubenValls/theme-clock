@@ -14,8 +14,11 @@ body .mode-container button {
   margin-top: 75px;
   height: 40px;
   width: 40px;
-  background-color: white;
+  background-color: black;
+  border: none;
+  box-shadow: 2px 2px 2px rgba(60, 60, 60, 0.6);
   border-radius: 10px;
+  transition: all 0.5s;
 }
 body .mode-container button:hover {
   cursor: pointer;
@@ -96,6 +99,7 @@ body .time-container h3 #day-number {
   font-size: 0.9rem;
   background-color: black;
   color: white;
+  transition: all 1s;
 }
 
 .dark {

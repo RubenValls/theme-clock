@@ -36,6 +36,7 @@ const updateDateHour = () => {
 }
 
 colorMode.addEventListener('click', () => {
+    const toggleMode = document.querySelector('#toggle-mode');
     const minutesHand = document.querySelector('#minutes');
     const hoursHand = document.querySelector('#hours');
     const centerHand = document.querySelector('#center');
@@ -43,6 +44,8 @@ colorMode.addEventListener('click', () => {
 
     if(document.body.classList.contains('light')){
         document.body.classList = 'dark';
+        toggleMode.style.backgroundColor = 'white';
+        toggleMode.style.boxShadow = '2px 2px 2px rgba(220, 220, 220, 0.6)';
         colorMode.innerHTML = '<i class="fa-regular fa-sun fa-xl" style="color: #000000;"></i>';
         minutesHand.style.backgroundColor = 'white';
         hoursHand.style.backgroundColor = 'white';
@@ -51,7 +54,10 @@ colorMode.addEventListener('click', () => {
         dateNumberContainer.style.color = 'black';
     }else{
         document.body.classList = 'light';
-        colorMode.innerHTML = '<i class="fa-solid fa-moon fa-2xl" style="color: #000000;"></i>';
+        toggleMode.style.backgroundColor = 'black';
+        toggleMode.style.boxShadow = '2px 2px 2px rgba(60, 60, 60, 0.6)';
+        toggleMode.style.backgroundColor = '#000000';
+        colorMode.innerHTML = '<i class="fa-solid fa-moon fa-2xl" style="color: #ffffff;"></i>';
         minutesHand.style.backgroundColor = 'black';
         hoursHand.style.backgroundColor = 'black';
         centerHand.style.backgroundColor = 'black';
