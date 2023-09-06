@@ -38,6 +38,7 @@ body .clock #center, body .time-container #center {
   border-radius: 100%;
   border: 3px solid red;
   background-color: black;
+  transition: all 1s;
 }
 body .clock #seconds, body .time-container #seconds {
   z-index: 1;
@@ -46,6 +47,8 @@ body .clock #seconds, body .time-container #seconds {
   top: 0;
   width: 3px;
   background-color: red;
+  transform-origin: bottom;
+  transition: all 1s;
 }
 body .clock #minutes, body .time-container #minutes {
   position: absolute;
@@ -53,6 +56,8 @@ body .clock #minutes, body .time-container #minutes {
   top: 0;
   width: 3px;
   background-color: black;
+  transform-origin: bottom;
+  transition: all 1s;
 }
 body .clock #hours, body .time-container #hours {
   position: absolute;
@@ -60,11 +65,14 @@ body .clock #hours, body .time-container #hours {
   top: 25%;
   width: 3px;
   background-color: black;
+  transform-origin: bottom;
+  transition: all 1s;
 }
 body .time-container {
   margin-top: 0;
   flex-direction: column;
   height: 300px;
+  transition: all 1s;
 }
 body .time-container h1 {
   margin: 0;

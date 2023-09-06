@@ -41,7 +41,8 @@ body{
             width: 5px;
             border-radius: 100%;
             border: 3px solid red;
-            background-color: black
+            background-color: black;
+            transition: all 1s;
         }
 
         #seconds{
@@ -51,6 +52,8 @@ body{
             top: 0;
             width: 3px;
             background-color: red;
+            transform-origin: bottom;
+            transition: all 1s;
         }
 
         #minutes{
@@ -59,6 +62,8 @@ body{
             top: 0;
             width: 3px;
             background-color: black;
+            transform-origin: bottom;
+            transition: all 1s;
         }
 
         #hours{
@@ -67,6 +72,8 @@ body{
             top: 25%;
             width: 3px;
             background-color: black;
+            transform-origin: bottom;
+            transition: all 1s;
         }
     }
 
@@ -75,6 +82,7 @@ body{
         margin-top: 0;
         flex-direction: column;
         height: 300px;
+        transition: all 1s;
 
         h1{
             margin: 0;
