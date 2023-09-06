@@ -35,7 +35,7 @@ const updateDateHour = () => {
     hoursHand.style.transform = `rotate(${hour * 30}deg)`;
 }
 
-colorMode.addEventListener('click', () => {
+const changeColorMode = () => {
     const toggleMode = document.querySelector('#toggle-mode');
     const minutesHand = document.querySelector('#minutes');
     const hoursHand = document.querySelector('#hours');
@@ -64,8 +64,9 @@ colorMode.addEventListener('click', () => {
         dateNumberContainer.style.backgroundColor = 'black';
         dateNumberContainer.style.color = 'white';
     }
-})
+}
 
+colorMode.addEventListener('click', changeColorMode)
 updateDateHour();
 setTodayInfo();
 const timeInterval = setInterval(updateDateHour, 1000);
